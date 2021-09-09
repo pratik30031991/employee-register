@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang=en xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<style>
+	body{background:#ffe6e6;}
+</style>
+
+</head>
+
+<body>
+	<div class="container w-50">
+		<h3 class="text-center py-2">Add New Employee Details</h3>
+		
+		<form action="#" th:action="@{/saveEmployee}" th:object="${empData}" method="POST">
+			
+			<input type="text" th:field="*{empId}" placeHolder="id" class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{empName}" placeHolder="Name" class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{empDept}" placeHolder="Department" class="form-control mb-4 col-4">
+			
+			<input type="text" th:field="*{empEmail}" placeHolder="e-mail" class="form-control mb-4 col-4">
+			
+			<button type="submit" class="btn btn-sm btn-info">Save Employee</button>
+			
+		</form>
+		<hr>
+		<a th:href="@{/}">Back To Employee List</a>
+	</div>
+</body>
+
+</html>
